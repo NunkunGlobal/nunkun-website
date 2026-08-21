@@ -55,18 +55,22 @@
   </script>
 </head>
 <body>
-  <div class="topline"><div class="topline-track"><span>TECHNOLOGY</span><i></i><span>LEGAL</span><i></i><span>DATA</span><i></i><span>DIGITAL</span><i></i><span>CREATIVE</span><i></i><span>AI</span><i></i><span>WEB</span><i></i><span>BUSINESS SUPPORT</span></div></div>
-
   <header class="site-header" id="top">
     <div class="container nav">
-      <a class="brand" href="#top" aria-label="Nunkun Global Solutions home"><img src="assets/nunkun-header-logo.webp" alt="Nunkun Global Solutions"></a>
+      <a class="brand" href="#top" aria-label="Nunkun Global Solutions home">
+        <img src="assets/nunkun-header-logo.webp" alt="Nunkun Global Solutions">
+      </a>
+      <div class="nav-divider" aria-hidden="true"></div>
       <nav class="desktop-nav" aria-label="Primary navigation">
-        <button class="services-trigger" aria-expanded="false" aria-controls="services-menu">Services <span class="chevron">⌄</span></button>
+        <button class="services-trigger" aria-expanded="false" aria-controls="services-menu"><span>Services</span><span class="chevron">⌄</span></button>
         <a href="#work">Work</a>
         <a href="#approach">Approach</a>
         <a href="#about">About</a>
       </nav>
-      <a class="nav-cta" href="#contact">Let's talk <span>↗</span></a>
+      <div class="nav-actions">
+        <span class="nav-status"><i></i> Available for new projects</span>
+        <a class="nav-cta" href="#contact">Let's talk <span>↗</span></a>
+      </div>
       <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </div>
     <div class="services-menu" id="services-menu" aria-hidden="true">
@@ -106,15 +110,27 @@
           <div class="hero-actions"><a class="btn btn-dark" href="#contact">Start a conversation <span>↗</span></a><a class="btn btn-light" href="#services">Explore capabilities <span>↓</span></a></div>
           <div class="hero-note"><span>Project-based</span><span>Hourly support</span><span>Dedicated resources</span><span>Managed workflows</span></div>
         </div>
-        <div class="hero-visual reveal reveal-delay">
-          <div class="visual-panel">
-            <div class="panel-top"><span>NUNKUN / CAPABILITIES</span><span>01 — 07</span></div>
-            <div class="visual-core"><div class="core-ring"></div><div class="core-ring ring-small"></div><div class="core-dot"></div><span class="core-label label-1">TECH</span><span class="core-label label-2">OPS</span><span class="core-label label-3">LEGAL</span><span class="core-label label-4">CREATIVE</span></div>
-            <div class="panel-bottom"><strong>One partner.</strong><span>Multiple specialist capabilities.</span></div>
+        <div class="hero-visual reveal reveal-delay" aria-label="Nunkun capabilities visual">
+          <div class="capability-scene">
+            <div class="scene-orbit orbit-one"></div>
+            <div class="scene-orbit orbit-two"></div>
+            <div class="scene-orbit orbit-three"></div>
+            <div class="scene-cross cross-x"></div>
+            <div class="scene-cross cross-y"></div>
+            <div class="scene-core">
+              <span class="core-word">NUNKUN</span>
+              <span class="core-sub">GLOBAL SOLUTIONS</span>
+              <span class="core-pulse"></span>
+            </div>
+            <div class="cap-node node-tech"><span class="node-index">01</span><strong>Technology</strong><small>IT · QA · Web</small></div>
+            <div class="cap-node node-ops"><span class="node-index">02</span><strong>Operations</strong><small>Data · Research</small></div>
+            <div class="cap-node node-legal"><span class="node-index">03</span><strong>Legal</strong><small>Research · Contracts</small></div>
+            <div class="cap-node node-creative"><span class="node-index">04</span><strong>Creative</strong><small>Design · Content</small></div>
+            <div class="cap-node node-ai"><span class="node-index">05</span><strong>AI & Data</strong><small>Annotation · Evaluation</small></div>
+            <div class="scene-label label-top">SPECIALIST CAPABILITIES</div>
+            <div class="scene-label label-bottom">ONE PARTNER / MANY WORKFLOWS</div>
           </div>
-          <div class="float float-1"><small>01</small><strong>Technology</strong><span>IT · QA · Web</span></div>
-          <div class="float float-2"><small>02</small><strong>Operations</strong><span>Data · Research</span></div>
-          <div class="float float-3"><small>03</small><strong>Legal</strong><span>Research · Contracts</span></div>
+          <div class="hero-side-note"><span class="note-line"></span><span>Built around the work that matters.</span></div>
         </div>
       </div>
       <div class="container scroll-cue"><span>Scroll to explore</span><span class="scroll-line"></span></div>
@@ -187,7 +203,7 @@
 
   <footer class="footer">
     <div class="container footer-grid">
-      <div><div class="footer-wordmark">NUNKUN</div><p>Global Solutions</p></div>
+      <div><strong class="footer-name">NUNKUN</strong><p>Global Solutions</p></div>
       <div><span>EXPLORE</span><a href="#services">Services</a><a href="#work">Work</a><a href="#approach">Approach</a><a href="#about">About</a></div>
       <div><span>CAPABILITIES</span><a href="#technology">Technology & IT</a><a href="#legal">Legal Support</a><a href="#data">Data & Back Office</a><a href="#creative">Creative & Design</a></div>
       <div><span>START HERE</span><a href="#contact">Contact</a><a href="mailto:hello@nunkun.com">hello@nunkun.com</a><a href="#top">Back to top ↑</a></div>
