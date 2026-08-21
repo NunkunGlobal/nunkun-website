@@ -36,3 +36,46 @@
 @keyframes nodeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 @media(max-width:1050px){.capability-scene{height:500px}.hero-side-note{right:0}.node-tech{left:0}.node-ops{right:0}.node-legal{left:0}.node-creative{right:2%}}
 @media(max-width:760px){.hero-visual{height:430px;margin-top:10px}.capability-scene{height:400px;width:100%}.orbit-one{width:250px;height:250px}.orbit-two{width:330px;height:145px}.orbit-three{width:365px;height:365px}.scene-core{width:112px;height:112px}.core-word{font-size:10px}.core-sub{font-size:4px}.core-pulse{width:6px;height:6px;top:18px;right:21px}.cap-node{min-width:105px;padding:9px 10px;border-radius:10px}.cap-node strong{font-size:10px}.cap-node small{font-size:6.5px}.node-index{font-size:6px}.node-tech{left:0;top:13%}.node-ops{right:0;top:29%}.node-legal{left:0;bottom:18%}.node-creative{right:0;bottom:8%}.node-ai{top:2%;left:38%}.cap-node:after{display:none}.scene-label{font-size:5.5px}.label-top{top:-5%}.label-bottom{bottom:-5%}.hero-side-note{display:none}}
+
+/* v6 hero capability interaction — seven service pillars around a single core */
+.hero-visual{overflow:visible}
+.capability-scene{isolation:isolate;perspective:1000px}
+.scene-glow{position:absolute;left:50%;top:50%;width:260px;height:260px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(199,164,90,.18),rgba(199,164,90,.05) 38%,transparent 72%);filter:blur(12px);z-index:0;animation:glowBreath 6s ease-in-out infinite}
+.scene-orbit{transition:opacity .45s ease,transform .8s cubic-bezier(.22,.61,.36,1)}
+.scene-cross{opacity:.55;transition:opacity .45s ease}
+.capability-scene:has(.cap-node:hover) .scene-orbit{opacity:.45}
+.capability-scene:has(.cap-node:hover) .scene-cross{opacity:.18}
+.capability-scene:has(.cap-node:hover) .scene-core{transform:translate(-50%,-50%) scale(.94);filter:saturate(.85)}
+
+.cap-node{color:var(--ink);text-decoration:none;cursor:pointer;min-width:158px;padding:14px 35px 14px 15px;border-radius:14px;border:1px solid rgba(7,17,31,.09);background:rgba(255,255,255,.84);box-shadow:0 16px 36px rgba(7,17,31,.09);backdrop-filter:blur(13px);-webkit-backdrop-filter:blur(13px);transform-origin:center;transition:transform .4s cubic-bezier(.2,.8,.2,1),opacity .35s ease,filter .35s ease,box-shadow .4s ease,border-color .4s ease;background .4s ease;}
+.cap-node:hover,.cap-node:focus-visible{transform:scale(1.14) translateY(-4px)!important;z-index:30!important;opacity:1!important;filter:none!important;background:rgba(255,255,255,.98);border-color:rgba(199,164,90,.52);box-shadow:0 28px 56px rgba(7,17,31,.18),0 0 0 1px rgba(199,164,90,.12)}
+.capability-scene:has(.cap-node:hover) .cap-node:not(:hover){opacity:.28;filter:blur(1px) saturate(.55);transform:scale(.88)}
+.capability-scene:has(.cap-node:focus-visible) .cap-node:not(:focus-visible){opacity:.28;filter:blur(1px) saturate(.55);transform:scale(.88)}
+.cap-node::before{content:"";position:absolute;inset:-1px;border-radius:inherit;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.76),transparent 46%);opacity:.7}
+.node-arrow{position:absolute;right:13px;top:13px;width:22px;height:22px;border:1px solid rgba(7,17,31,.10);border-radius:50%;display:grid;place-items:center;font-size:10px;color:#7f6a3a;opacity:.55;transition:transform .35s ease,opacity .35s ease,background .35s ease}
+.cap-node:hover .node-arrow,.cap-node:focus-visible .node-arrow{transform:translate(2px,-2px) rotate(-6deg);opacity:1;background:rgba(199,164,90,.10)}
+.cap-node strong{font-size:13px;line-height:1.18;position:relative}
+.cap-node small{font-size:8px;position:relative}
+.cap-node .node-index{position:relative}
+
+/* service pillar placements */
+.node-tech{left:2%;top:19%;animation-delay:-.8s}
+.node-ops{right:0;top:21%;animation-delay:-2.2s}
+.node-legal{left:0;top:49%;animation-delay:-3.1s}
+.node-creative{left:8%;bottom:8%;animation-delay:-1.3s}
+.node-ai{right:9%;bottom:10%;left:auto;top:auto;animation-delay:-4s}
+.node-marketing{right:0;top:45%;animation-delay:-1.7s}
+.node-web{left:37%;bottom:-1%;animation-delay:-2.9s}
+
+/* connector hint lines */
+.orbit-notch{position:absolute;left:50%;top:50%;width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 7px rgba(199,164,90,.10),0 0 20px rgba(199,164,90,.22);z-index:2;animation:notchPulse 3s ease-in-out infinite}
+.notch-a{transform:translate(-50%,-50%) translateX(181px)}
+.notch-b{transform:translate(-50%,-50%) translateY(-181px);animation-delay:-1s}
+.notch-c{transform:translate(-50%,-50%) translateX(-181px);animation-delay:-2s}
+
+.scene-label{z-index:5}
+.label-bottom{bottom:-2%}
+@keyframes glowBreath{0%,100%{transform:translate(-50%,-50%) scale(.95);opacity:.8}50%{transform:translate(-50%,-50%) scale(1.08);opacity:1}}
+@keyframes notchPulse{0%,100%{opacity:.55;transform-origin:center;box-shadow:0 0 0 6px rgba(199,164,90,.08),0 0 14px rgba(199,164,90,.14)}50%{opacity:1;box-shadow:0 0 0 10px rgba(199,164,90,.02),0 0 24px rgba(199,164,90,.30)}}
+@media(max-width:1050px){.cap-node{min-width:142px}.node-tech{left:0}.node-ops{right:0}.node-legal{left:0}.node-marketing{right:0}.node-creative{left:1%}.node-ai{right:2%}.node-web{left:35%}}
+@media(max-width:760px){.capability-scene{height:430px}.scene-glow{width:190px;height:190px}.node-tech{left:0;top:12%}.node-ops{right:0;top:18%}.node-legal{left:0;top:39%}.node-marketing{right:0;top:39%}.node-creative{left:0;bottom:8%}.node-ai{right:0;bottom:8%}.node-web{left:34%;bottom:-2%}.cap-node{min-width:104px;padding:9px 30px 9px 10px}.cap-node strong{font-size:9px}.cap-node small{font-size:6.3px}.node-arrow{width:18px;height:18px;right:8px;top:9px;font-size:8px}.orbit-one{width:250px;height:250px}.orbit-two{width:330px;height:145px}.orbit-three{width:365px;height:365px}.notch-a{transform:translate(-50%,-50%) translateX(125px)}.notch-b{transform:translate(-50%,-50%) translateY(-125px)}.notch-c{transform:translate(-50%,-50%) translateX(-125px)}.label-bottom{bottom:-7%}}

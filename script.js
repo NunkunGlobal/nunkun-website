@@ -54,3 +54,19 @@ window.addEventListener('scroll',()=>{
 },{passive:true});
 
 document.getElementById('year').textContent=new Date().getFullYear();
+
+// Hero pillar interactions: click anchors naturally scroll to the matching capability.
+// Right-click is intentionally left as the browser context menu; the cards are designed for click/tap.
+const capabilityScene=document.querySelector('.capability-scene');
+const capabilityNodes=[...document.querySelectorAll('.cap-node')];
+capabilityNodes.forEach((node,index)=>{
+  node.addEventListener('keydown',(event)=>{
+    if(event.key==='Enter' || event.key===' '){
+      event.preventDefault();
+      node.click();
+    }
+  });
+  node.addEventListener('pointerenter',()=>{
+    capabilityNodes.forEach(n=>n.style.setProperty('--node-delay', `${index*12}ms`));
+  });
+});
