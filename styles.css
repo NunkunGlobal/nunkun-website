@@ -259,3 +259,196 @@
   .planet-core strong{font-size:7px}
   .planet-core em{font-size:4px}
 }
+
+/* v10 — right-balanced solar system + unified Nunkun palette */
+:root{
+  --navy:#06111f;
+  --navy2:#0a1a2a;
+  --ink:#f4f1e8;
+  --muted:#a6b0bb;
+  --paper:#06111f;
+  --white:#f8f5ee;
+  --gold:#d9ad4f;
+  --gold2:#f0cf7a;
+  --line:rgba(255,255,255,.12);
+  --shadow:0 30px 90px rgba(0,0,0,.28);
+}
+
+html,body{background:#06111f;color:#f4f1e8}
+body{overflow-x:hidden}
+.site-header{background:rgba(6,17,31,.90);border-bottom:1px solid rgba(255,255,255,.09);box-shadow:0 10px 34px rgba(0,0,0,.18)}
+.nav-divider{background:rgba(255,255,255,.14)}
+.desktop-nav a,.services-trigger{color:#aeb7c1}
+.desktop-nav a:hover,.services-trigger:hover{color:#fff;background:rgba(255,255,255,.055)}
+.services-trigger[aria-expanded="true"]{background:#f0cf7a;color:#06111f}
+.nav-status{color:#8e9aa8}.nav-status i{background:#d9ad4f;box-shadow:0 0 0 4px rgba(217,173,79,.13)}
+.nav-cta{background:#f0cf7a;color:#06111f;box-shadow:0 10px 24px rgba(217,173,79,.16)}
+.nav-cta:hover{box-shadow:0 16px 34px rgba(217,173,79,.23)}
+.mobile-menu{background:#071522;border-bottom:1px solid rgba(255,255,255,.1)}
+.mobile-menu>a,.mobile-menu summary{color:#f7f4ed}.mobile-menu details a{color:#9eabb9}
+
+/* Desktop: the solar system owns the full right half of the hero. */
+@media (min-width:981px){
+  .hero-cosmic .hero-inner{
+    display:block;
+    width:100%;
+    max-width:none;
+    min-height:calc(100vh - 92px);
+    padding:56px 0 24px max(24px, calc((100% - 1180px)/2));
+    position:relative;
+  }
+  .hero-cosmic .hero-copy{
+    width:43%;
+    max-width:650px;
+    margin:0;
+    position:relative;
+    z-index:12;
+  }
+  .hero-cosmic .hero-lead{max-width:540px}
+  .cosmic-visual{
+    position:absolute;
+    left:43%;
+    right:0;
+    top:0;
+    bottom:0;
+    width:auto;
+    height:auto;
+    min-height:0;
+    display:grid;
+    place-items:center;
+    overflow:visible;
+    padding:0;
+    z-index:3;
+  }
+  .solar-system{
+    width:min(690px, calc(57vw - 12px));
+    height:min(690px, calc(100vh - 150px));
+    min-height:610px;
+    max-height:690px;
+    aspect-ratio:1;
+    margin:0;
+    transform:none;
+  }
+  .orbit-1{width:195px;height:195px}
+  .orbit-2{width:350px;height:350px}
+  .orbit-3{width:510px;height:510px}
+  .orbit-4{width:650px;height:650px}
+  .nunkun-sun{width:172px;height:172px}
+  .sun-word{font-size:18px}
+  .planet,.planet-core{width:108px;height:108px}
+  .planet-core{padding:13px}
+  .planet-core strong{font-size:11px}
+  .planet-core em{font-size:6px}
+  .planet-core small{font-size:6.5px}
+  .planet:hover .planet-core,.planet:focus-visible .planet-core{transform:scale(1.22)}
+  .solar-caption{bottom:16px;left:50%;font-size:7px}
+}
+
+/* The hero visual should never collide with the copy. */
+@media (min-width:981px) and (max-width:1250px){
+  .hero-cosmic .hero-copy{width:44%}
+  .cosmic-visual{left:44%}
+  .solar-system{width:min(650px, calc(56vw - 10px));height:min(650px, calc(100vh - 150px));min-height:570px}
+  .orbit-2{width:330px;height:330px}.orbit-3{width:465px;height:465px}.orbit-4{width:610px;height:610px}
+  .planet,.planet-core{width:100px;height:100px}
+}
+
+/* Small desktop heights: scale the whole solar system without changing its center. */
+@media (min-width:981px) and (max-height:780px){
+  .hero-cosmic .hero-inner{padding-top:36px}
+  .hero-cosmic h1{font-size:clamp(58px,6.3vw,92px);margin-bottom:24px}
+  .hero-cosmic .hero-lead{font-size:14px}
+  .solar-system{transform:scale(.90)}
+}
+
+/* Tablet */
+@media (max-width:980px){
+  .hero-cosmic .hero-inner{display:block;padding:54px 0 28px;width:min(100% - 36px,1180px);min-height:auto}
+  .hero-cosmic .hero-copy{width:100%;max-width:760px;margin:0 auto}
+  .cosmic-visual{position:relative;left:auto;right:auto;top:auto;bottom:auto;width:100%;height:650px;margin:18px auto 0;display:grid;place-items:center}
+  .solar-system{width:620px;height:620px;min-height:0;max-height:none;margin:0;transform:none}
+  .solar-orbit.orbit-4{width:590px;height:590px}
+  .solar-orbit.orbit-3{width:460px;height:460px}
+  .solar-orbit.orbit-2{width:320px;height:320px}
+  .solar-orbit.orbit-1{width:180px;height:180px}
+  .nunkun-sun{width:165px;height:165px}
+  .planet,.planet-core{width:104px;height:104px}
+  .solar-caption{bottom:6px}
+}
+
+/* Mobile — one clean centered system, no horizontal overflow. */
+@media (max-width:680px){
+  .hero-cosmic .hero-inner{width:calc(100% - 30px);padding:42px 0 12px}
+  .hero-cosmic .hero-copy{width:100%;padding:0}
+  .hero-cosmic h1{font-size:clamp(45px,14.4vw,70px);line-height:.92;letter-spacing:-.07em;margin-bottom:20px}
+  .hero-cosmic .hero-lead{font-size:14px;line-height:1.55;max-width:590px}
+  .hero-actions{margin-top:22px}
+  .hero-note{font-size:7px;line-height:1.5}
+  .cosmic-visual{height:470px;margin:18px -15px 0;width:calc(100% + 30px)}
+  .solar-system{width:430px;height:430px;transform:none;flex:none}
+  .solar-orbit.orbit-1{width:124px;height:124px}
+  .solar-orbit.orbit-2{width:215px;height:215px}
+  .solar-orbit.orbit-3{width:318px;height:318px}
+  .solar-orbit.orbit-4{width:408px;height:408px}
+  .nunkun-sun{width:118px;height:118px}
+  .sun-word{font-size:11px}.sun-sub{font-size:4.4px}.sun-pulse{width:7px;height:7px;right:19px;top:19px}
+  .planet,.planet-core{width:72px;height:72px}
+  .planet{--radius:165px !important}
+  .planet-core{padding:8px}
+  .planet-core small{font-size:5px;margin-bottom:3px}
+  .planet-core strong{font-size:7.6px;line-height:1.03}
+  .planet-core em{font-size:4.1px;margin-top:3px}
+  .planet-core i{font-size:7px;top:7px;right:8px}
+  .solar-caption{bottom:-2px;font-size:5px}
+}
+@media (max-width:430px){
+  .hero-cosmic .hero-inner{width:calc(100% - 24px);padding-top:34px}
+  .cosmic-visual{height:405px;margin-top:14px}
+  .solar-system{width:370px;height:370px}
+  .solar-orbit.orbit-1{width:106px;height:106px}.solar-orbit.orbit-2{width:180px;height:180px}.solar-orbit.orbit-3{width:268px;height:268px}.solar-orbit.orbit-4{width:350px;height:350px}
+  .nunkun-sun{width:100px;height:100px}.sun-word{font-size:9.5px}.sun-sub{font-size:4px}
+  .planet,.planet-core{width:64px;height:64px}.planet{--radius:140px !important}.planet-core{padding:7px}.planet-core strong{font-size:6.7px}.planet-core em{font-size:3.7px}
+}
+
+/* Remove the old scroll cue entirely: it competed with the visual balance. */
+.cosmic-scroll{display:none!important}
+
+/* Unified palette for the rest of the site */
+.intro,.services,.work,.why{background:#071421;color:#f5f1e8}
+.intro{border-top:1px solid rgba(255,255,255,.07)}
+.section-meta{color:#758293}.section-meta span:first-child,.kicker,.service-num,.service-tags span{color:var(--gold)}
+.intro-copy>p:last-child,.section-head>p,.service-main>p,.why-lead,.why-item p{color:#9ca8b6}
+.intro-copy h2,.section-head h2,.why h2{color:#f5f1e8}
+.service-list,.why-list{border-color:rgba(255,255,255,.11)}
+.service-item{border-color:rgba(255,255,255,.11)}
+.service-item:hover{background:linear-gradient(90deg,transparent,rgba(255,255,255,.035))}
+.service-title h3,.why-item h3{color:#f5f1e8}
+.service-title span{border-color:rgba(255,255,255,.18);color:#e5c16c}.service-item:hover .service-title span{background:var(--gold);color:#071421}
+.service-tags span{border-color:rgba(217,173,79,.26);color:#c9d0d7;background:rgba(217,173,79,.03)}
+.work{border-top:1px solid rgba(255,255,255,.06)}
+.work .section-head>p,.work .project-copy span{color:#9ca8b6}
+.project{border-color:rgba(255,255,255,.1);background:#0b1b2b;box-shadow:none}
+.project:hover{box-shadow:0 30px 80px rgba(0,0,0,.26)}
+.project-copy{background:#0b1b2b;color:#f4f1e8;border-top:1px solid rgba(255,255,255,.08)}
+.website-art{background:linear-gradient(135deg,#0c2135,#122b42)}
+.data-art{background:linear-gradient(135deg,#0a1d2d,#102b3d)}
+.legal-art{background:linear-gradient(135deg,#0c202d,#142f34)}
+.ai-art{background:linear-gradient(135deg,#0c1e31,#19233f)}
+.browser{background:#0b1725}.browser-bar{background:#102132;border-color:rgba(255,255,255,.09)}.browser-bar i{background:#69788a}.data-card,.legal-card{background:#0d2031;color:#f5f1e8;border:1px solid rgba(255,255,255,.09)}.data-row,.legal-lines{background:rgba(255,255,255,.12)}
+.approach{background:#06111f}
+.why{border-top:1px solid rgba(255,255,255,.07)}
+.why-list{border-top-color:rgba(255,255,255,.12)}.why-item{border-bottom-color:rgba(255,255,255,.12)}
+.cta-section{background:#071522}
+.footer{background:#030a12;border-top:1px solid rgba(255,255,255,.08)}
+.btn-light{background:rgba(255,255,255,.035);color:#f5f1e8;border-color:rgba(255,255,255,.18)}.btn-light:hover{background:rgba(255,255,255,.08)}
+
+/* Unified palette for service pages */
+.service-page{background:#071421;color:#f4f1e8}.service-header{background:rgba(6,17,31,.92)!important;color:#f4f1e8;border-bottom:1px solid rgba(255,255,255,.09)}
+.service-body{background:#071421}.service-desc{color:#9ca8b6}.service-detail-grid{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.09)}.service-detail-card{background:#0b1b2b;color:#f4f1e8}.service-detail-card:hover{background:#10253a}.service-detail-card em{color:#93a0ae}.service-detail-card span{color:var(--gold)}
+.service-cta{background:#06111f}.service-orb{box-shadow:0 0 0 25px rgba(217,174,76,.05),0 0 110px rgba(217,174,76,.26)}
+
+@media(max-width:760px){
+  .site-header{background:rgba(6,17,31,.94)}
+  .menu-btn{background:var(--gold);}.menu-btn span{background:#06111f}
+  .footer-grid>div:first-child>p{color:#8290a0}
+}
