@@ -452,3 +452,33 @@ body{overflow-x:hidden}
   .menu-btn{background:var(--gold);}.menu-btn span{background:#06111f}
   .footer-grid>div:first-child>p{color:#8290a0}
 }
+
+
+/* v11 — header logo readability + refined sizing */
+.site-header .brand{
+  width:188px;
+  height:70px;
+  padding:7px 4px;
+  border-radius:14px;
+  background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,0));
+}
+.site-header .brand img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  filter:drop-shadow(0 3px 10px rgba(0,0,0,.34));
+}
+.site-header .nav-divider{
+  background:rgba(225,199,125,.26);
+}
+@media (min-width:1201px){
+  .nav{grid-template-columns:198px 1px 1fr auto;}
+}
+@media (max-width:1120px){
+  .nav{grid-template-columns:176px 1px 1fr auto;}
+  .site-header .brand{width:170px;height:66px;padding:7px 2px;}
+}
+@media (max-width:760px){
+  .nav{height:72px;}
+  .site-header .brand{width:136px;height:54px;padding:5px 0;border-radius:10px;}
+}
