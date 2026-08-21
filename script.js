@@ -1,32 +1,56 @@
 const menuBtn=document.querySelector('.menu-btn');
-const mobileNav=document.querySelector('.mobile-nav');
+const mobileMenu=document.querySelector('.mobile-menu');
 const servicesTrigger=document.querySelector('.services-trigger');
-const mega=document.querySelector('.mega-menu');
+const servicesMenu=document.querySelector('.services-menu');
 
-menuBtn?.addEventListener('click',()=>{
-  const open=mobileNav.classList.toggle('open');
-  menuBtn.setAttribute('aria-expanded',String(open));
-  mobileNav.setAttribute('aria-hidden',String(!open));
-});
-
-document.querySelectorAll('.mobile-nav a').forEach(a=>a.addEventListener('click',()=>{
-  mobileNav.classList.remove('open'); menuBtn?.setAttribute('aria-expanded','false'); mobileNav?.setAttribute('aria-hidden','true');
-}));
+function closeServices(){
+  servicesMenu?.classList.remove('open');
+  servicesTrigger?.setAttribute('aria-expanded','false');
+  servicesMenu?.setAttribute('aria-hidden','true');
+}
 
 servicesTrigger?.addEventListener('click',()=>{
-  const open=mega.classList.toggle('open');
+  const open=!servicesMenu.classList.contains('open');
+  servicesMenu.classList.toggle('open',open);
   servicesTrigger.setAttribute('aria-expanded',String(open));
-  mega.setAttribute('aria-hidden',String(!open));
+  servicesMenu.setAttribute('aria-hidden',String(!open));
 });
 
-document.addEventListener('click',(e)=>{
-  if(mega && !mega.contains(e.target) && !servicesTrigger?.contains(e.target)){
-    mega.classList.remove('open'); servicesTrigger?.setAttribute('aria-expanded','false'); mega.setAttribute('aria-hidden','true');
-  }
+document.addEventListener('click',(event)=>{
+  if(servicesMenu && !servicesMenu.contains(event.target) && !servicesTrigger?.contains(event.target)) closeServices();
 });
 
-document.querySelectorAll('.mega-menu a').forEach(a=>a.addEventListener('click',()=>{
-  mega.classList.remove('open'); servicesTrigger?.setAttribute('aria-expanded','false'); mega.setAttribute('aria-hidden','true');
+document.querySelectorAll('.services-menu a').forEach(link=>link.addEventListener('click',closeServices));
+
+menuBtn?.addEventListener('click',()=>{
+  const open=mobileMenu.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded',String(open));
+  mobileMenu.setAttribute('aria-hidden',String(!open));
+  if(open) closeServices();
+});
+
+document.querySelectorAll('.mobile-menu a').forEach(link=>link.addEventListener('click',()=>{
+  mobileMenu.classList.remove('open');
+  menuBtn?.setAttribute('aria-expanded','false');
+  mobileMenu?.setAttribute('aria-hidden','true');
 }));
+
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach((entry)=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.12,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach((el,index)=>{
+  el.style.transitionDelay=`${Math.min(index%4,3)*70}ms`;
+  observer.observe(el);
+});
+
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  document.documentElement.style.setProperty('--scroll',`${y}px`);
+},{passive:true});
 
 document.getElementById('year').textContent=new Date().getFullYear();
