@@ -1,1 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://nunkun-website-v1.vercel.app/</loc></url><url><loc>https://nunkun-website-v1.vercel.app/services/technology-it.html</loc></url><url><loc>https://nunkun-website-v1.vercel.app/services/data-operations.html</loc></url><url><loc>https://nunkun-website-v1.vercel.app/services/legal-support.html</loc></url><url><loc>https://nunkun-website-v1.vercel.app/services/digital-marketing.html</loc></url><url><loc>https://nunkun-website-v1.vercel.app/services/creative-design.html</loc></url><url><loc>https://nunkun-website-v1.vercel.app/services/ai-data.html</loc></url><url><loc>https://nunkun-website-v1.vercel.app/services/web-development.html</loc></url></urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://nunkun-website-v1.vercel.app/</loc></url>
+  <url><loc>https://nunkun-website-v1.vercel.app/services/technology-it.html</loc></url>
+  <url><loc>https://nunkun-website-v1.vercel.app/services/legal-support.html</loc></url>
+  <url><loc>https://nunkun-website-v1.vercel.app/services/data-operations.html</loc></url>
+  <url><loc>https://nunkun-website-v1.vercel.app/services/digital-marketing.html</loc></url>
+  <url><loc>https://nunkun-website-v1.vercel.app/services/creative-design.html</loc></url>
+  <url><loc>https://nunkun-website-v1.vercel.app/services/ai-data.html</loc></url>
+  <url><loc>https://nunkun-website-v1.vercel.app/services/web-development.html</loc></url>
+</urlset>

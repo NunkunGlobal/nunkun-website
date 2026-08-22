@@ -1,18 +1,21 @@
-# Nunkun Global Solutions — Website
+# Nunkun Global Solutions — Static Vercel Site
 
-Static HTML/CSS/JS website ready for Vercel.
+Static HTML/CSS/JS website designed for Vercel.
 
-## Files
-- `index.html` — page structure, SEO metadata and structured data
-- `styles.css` — responsive design and animations
-- `script.js` — navigation and scroll-reveal interactions
-- `assets/nunkun-logo.webp` — full brand logo / favicon source
-- `assets/nunkun-header-logo.webp` — compact header wordmark crop
-- `robots.txt` — crawler directives
-- `sitemap.xml` — sitemap
-- `vercel.json` — static deployment configuration
+## Deploy
 
-## Before launch
-1. Replace `hello@nunkun.com` with the real business email.
-2. Replace the temporary canonical/OG/sitemap domain with the final Nunkun domain once the custom domain is connected.
-3. Add verified social profiles to the Organization schema `sameAs` array if available.
+Upload the contents of this folder to the connected GitHub repository. `index.html` must remain in the repository root.
+
+No build command or install command is required.
+
+## Included
+
+- Responsive editorial-style homepage
+- Services dropdown with seven service categories
+- Dedicated service pages
+- SEO metadata, JSON-LD, robots.txt and sitemap.xml
+- Nunkun brand assets and responsive navigation
+- Scroll-reveal and interaction animations with reduced-motion support
+
+## Portfolio interaction
+The Work section uses a restrained horizontal project slider with arrow controls, swipe/drag on touch devices, and wheel-to-next behavior on desktop. It is designed as a portfolio interaction rather than a decorative animation.
